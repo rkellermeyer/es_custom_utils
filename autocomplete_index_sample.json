@@ -1,0 +1,231 @@
+PUT /54594-24f9b2f14f3af2261c794e11e2fd18ba
+{
+  "settings": {
+    "index": {
+      "number_of_shards": "5",
+      "number_of_replicas": "1",
+      "analysis": {
+        "filter": {
+          "autocomplete_filter": {
+            "type":     "edge_ngram",
+            "min_gram": 1,
+            "max_gram": 20
+          }
+        },
+        "analyzer": {
+          "autocomplete": {
+            "type":      "custom",
+            "tokenizer": "standard",
+            "filter": [
+              "lowercase",
+              "autocomplete_filter"
+            ]
+          }
+        }
+      }
+    }
+  },
+  "mappings": {
+    "FeatureCollection": {
+      "properties": {
+        "geometry": {
+          "properties": {
+            "coordinates": {
+              "type": "float"
+            },
+            "type": {
+              "type": "text",
+              "fields": {
+                "keyword": {
+                  "type": "keyword",
+                  "ignore_above": 256
+                }
+              }
+            }
+          }
+        },
+        "ogc_fid": {
+          "type": "long"
+        },
+        "properties": {
+          "properties": {
+            "Alternate Street": {
+              "type": "text",
+              "fields": {
+                "keyword": {
+                  "type": "keyword",
+                  "ignore_above": 256
+                }
+              },
+              "analyzer": "autocomplete",
+              "search_analyzer": "standard"
+            },
+            "Alternate Street2": {
+              "type": "text",
+              "fields": {
+                "keyword": {
+                  "type": "keyword",
+                  "ignore_above": 256
+                }
+              },
+              "analyzer": "autocomplete",
+              "search_analyzer": "standard"
+            },
+            "Dir": {
+              "type": "text",
+              "fields": {
+                "keyword": {
+                  "type": "keyword",
+                  "ignore_above": 256
+                }
+              }
+            },
+            "Hwy Alias": {
+              "type": "text",
+              "fields": {
+                "keyword": {
+                  "type": "keyword",
+                  "ignore_above": 256
+                }
+              },
+              "analyzer": "autocomplete",
+              "search_analyzer": "standard"
+            },
+            "Hwy Name": {
+              "type": "text",
+              "fields": {
+                "keyword": {
+                  "type": "keyword",
+                  "ignore_above": 256
+                }
+              },
+              "analyzer": "autocomplete",
+              "search_analyzer": "standard"
+            },
+            "Left Community": {
+              "type": "text",
+              "fields": {
+                "keyword": {
+                  "type": "keyword",
+                  "ignore_above": 256
+                }
+              },
+              "analyzer": "autocomplete",
+              "search_analyzer": "standard"
+            },
+            "Left From": {
+              "type": "long"
+            },
+            "Left To": {
+              "type": "long"
+            },
+            "Right Community": {
+              "type": "text",
+              "fields": {
+                "keyword": {
+                  "type": "keyword",
+                  "ignore_above": 256
+                }
+              },
+              "analyzer": "autocomplete",
+              "search_analyzer": "standard"
+            },
+            "Right From": {
+              "type": "long"
+            },
+            "Right To": {
+              "type": "long"
+            },
+            "Route Type Name": {
+              "type": "text",
+              "fields": {
+                "keyword": {
+                  "type": "keyword",
+                  "ignore_above": 256
+                }
+              },
+              "analyzer": "autocomplete",
+              "search_analyzer": "standard"
+            },
+            "Shield Text": {
+              "type": "text",
+              "fields": {
+                "keyword": {
+                  "type": "keyword",
+                  "ignore_above": 256
+                }
+              },
+              "analyzer": "autocomplete",
+              "search_analyzer": "standard"
+            },
+            "Shield Type": {
+              "type": "text",
+              "fields": {
+                "keyword": {
+                  "type": "keyword",
+                  "ignore_above": 256
+                }
+              },
+              "analyzer": "autocomplete",
+              "search_analyzer": "standard"
+            },
+            "Street": {
+              "type": "text",
+              "fields": {
+                "keyword": {
+                  "type": "keyword",
+                  "ignore_above": 256
+                }
+              },
+              "analyzer": "autocomplete",
+              "search_analyzer": "standard"
+            },
+            "Street Alias": {
+              "type": "text",
+              "fields": {
+                "keyword": {
+                  "type": "keyword",
+                  "ignore_above": 256
+                }
+              },
+              "analyzer": "autocomplete",
+              "search_analyzer": "standard"
+            },
+            "Symbol Type": {
+              "type": "text",
+              "fields": {
+                "keyword": {
+                  "type": "keyword",
+                  "ignore_above": 256
+                }
+              },
+              "analyzer": "autocomplete",
+              "search_analyzer": "standard"
+            },
+            "SyncEvent": {
+              "type": "text",
+              "fields": {
+                "keyword": {
+                  "type": "keyword",
+                  "ignore_above": 256
+                }
+              }
+            },
+            "think_gis_id": {
+              "type": "long"
+            }
+          }
+        },
+        "type": {
+          "type": "text",
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        }
+      }
+    }
+  }
+}
